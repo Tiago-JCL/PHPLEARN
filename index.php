@@ -7,8 +7,11 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <h3>Julhiiiiiiiiiiiinha</h3>
     <?php
-    echo "Hellow World";
+    $julhinha = "Julhinha";
+    echo "Hellow ". $julhinha . "<br>";
+    ECHO "Hello Juinha2"
     ?>
   </body>
 </html>
