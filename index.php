@@ -9,7 +9,13 @@
   <body>
     <h3>Julhiiiiiiiiiiiinha</h3>
     <?php
-    $julhinha = "Julhinha";
+    // one comment Line
+    # one comment Line
+    /* multiple comment
+    lines */
+    $numero = 1 /* in the middle */ + 1;
+    echo $numero,"<br>";
+    $julhinha = "Julhinha"; //hey
     echo "Hellow ". $julhinha . "<br>";
     ECHO "Hello Juinha2"
     ?>
