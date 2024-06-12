@@ -9,50 +9,83 @@
   <body>
     <h3>Julhiiiiiiiiiiiinha</h3>
     <?php
-    //W3 PHP Variables
-    $x = 10;
-    $y = 20;
-    $joao = "João";
-    echo "x = ".$x."/ y = ".$y."/ x+y = ".$x+$y;
-    echo "<br> I have $x apples and ".$y." oranges <br>";
-    /* You can't merge two data types
-    echo $x+$joao; INT + STRING
-    
-    DATA TYPES:
-    
-    String "abc"
-    Integer 123
-    Float (also called double) 1.123 
-    Boolean
-    Array
-    Object
-    NULL
-    Resource
-    */
-    //To get the data type:
-    echo gettype($x)."<br>";
-    var_dump($x); echo "<br>"; var_dump([2, 3, 56]); echo "<br>";
-    var_dump(NULL); echo "<br>";
+    //W3 PHP Echo/Print to Strings
 
-    function teste(){
-      echo "Function Test:";
-      global $x;
-      echo "<br> Now i have x value: ".$x;
+    /* echo has no return value while print has a return
+    value of 1 so it can be used in expressions. echo can
+    take multiple parameters (although such usage is rare)
+    while print can take one argument. echo is marginally 
+    faster than print */
+
+    $txt1 = "Hello";
+    
+    echo "This ", "string ", "was ", "made ", "with multiple parameters.";
+    echo "<br>";
+    echo "<h2>PHP!</h2>";
+    print "<h5>" . $txt1 . "</h5>";
+
+    $cars = array("Volvo","BMW","Toyota");
+    var_dump($cars);
+    function br(){
+      echo "<br>";
     }
-    teste();
-    function teste2() {
-      $GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];
+    
+    class Car {
+      public $color;
+      public $model;
+      public function __construct($color, $model) {
+        $this->color = $color;
+        $this->model = $model;
+      }
+      public function message() {
+        return "My car is a " . $this->color . " " . $this->model . "!";
+      }
     }
-    teste2();
-    echo "<br> Now i have y value: ".$y."<br>";
-    function teste3(){
-      static $x = 0;
-      echo "plus ".$x."<br>";
-      $x++;
-    }
-    teste3();
-    teste3();
-    teste3();
+
+    
+    $myCar = new Car("red", "Volvo");
+    var_dump($myCar);
+    echo "<br>";
+    echo $myCar -> message(),"<br>";
+
+    $x = 5;
+    $x = (string) $x;
+    var_dump($x); echo "<br><br>";
+
+    $z = "JoHn Waltz";
+    echo "Hello $z"; br();
+    echo 'Hello $z'; br();
+    echo strtoupper($z); br();
+    echo strtolower($z); br();
+    echo str_replace("Waltz", "Dolly", $z); br();
+    echo strrev($z);br();
+    echo trim($z);br();
+    $w = explode(" ", $z);
+    print_r($w); br();
+    $char1; 
+    $char2 = "dia";
+    //Concatenate:
+    $char3 = $z ." ". $char2;
+    echo $char3; br();
+    $char4 = "$z $char2";
+    echo $char4; br();
+    echo substr($z, 7); br();
+    echo substr($z, 2, 7); br();
+    echo substr($z, -2, 3); br();
+    echo strlen($z); br();
+    $char5 = "We are the so-called \"Vikings\" from the north.";
+    echo $char5; br();
+    /*
+    \'	Single Quote	
+    \"	Double Quote	
+    \$	PHP variables	
+    \n	New Line	
+    \r	Carriage Return	
+    \t	Tab	
+    \f	Form Feed	
+    \ooo	Octal value	
+    \xhh	Hex value
+    */
     ?>
   </body>
 </html>
